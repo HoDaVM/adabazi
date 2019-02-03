@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1069701268242",
+    "firebase_url": "https://freeapps-82535.firebaseio.com",
+    "project_id": "freeapps-82535",
+    "storage_bucket": "freeapps-82535.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069701268242:android:97472bc5f9d06457",
+        "android_client_info": {
+          "package_name": "com.sunsct.adabazi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069701268242-hl8dqjufk202rjeupr7fia6h5kl4lncj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN4A_H4vCK-aKQJnJSf6t1sBQGIWGDFbY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

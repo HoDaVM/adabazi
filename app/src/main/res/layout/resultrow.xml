@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="0dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/NameTeam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:text="تیم اول"
+        android:textColor="#ffffff"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="16dp" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/firstteam"
+        android:layout_width="match_parent"
+        android:layout_height="133dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shapeblack"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameTeam">
+
+        <TextView
+            android:id="@+id/emtiaz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="امتیاز :"
+            android:textColor="#ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/editableEmtiaz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="8dp"
+            android:text="25"
+            android:textColor="#ffffff"
+            app:layout_constraintEnd_toStartOf="@id/emtiaz"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/khata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="تعداد خطا : "
+            android:textColor="#ffffff"
+            app:layout_constraintBottom_toBottomOf="@+id/editableEmtiaz"
+            app:layout_constraintEnd_toStartOf="@+id/editableEmtiaz"
+            app:layout_constraintTop_toTopOf="@id/editableEmtiaz" />
+
+        <TextView
+            android:id="@+id/editablekhata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:text="0"
+            android:textColor="#ffffff"
+            app:layout_constraintBottom_toBottomOf="@+id/khata"
+            app:layout_constraintEnd_toStartOf="@+id/khata"
+            app:layout_constraintTop_toTopOf="@+id/khata" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="زمان اضافی :"
+            android:textColor="#ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emtiaz" />
+
+        <TextView
+            android:id="@+id/editableytime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:text="60"
+            android:textColor="#ffffff"
+            app:layout_constraintBottom_toBottomOf="@+id/time"
+            app:layout_constraintEnd_toStartOf="@+id/time"
+            app:layout_constraintTop_toTopOf="@+id/time" />
+
+        <TextView
+            android:id="@+id/pointezafi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="امتیاز زمان اضافی: "
+            android:textColor="#ffffff"
+            app:layout_constraintEnd_toEndOf="@+id/emtiaz"
+            app:layout_constraintTop_toBottomOf="@+id/time" />
+
+        <TextView
+            android:id="@+id/editablepointezafi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:text="2"
+            android:textColor="#ffffff"
+            app:layout_constraintBottom_toBottomOf="@+id/pointezafi"
+            app:layout_constraintEnd_toStartOf="@+id/pointezafi"
+            app:layout_constraintTop_toTopOf="@+id/pointezafi" />
+
+        <TextView
+            android:id="@+id/totalpoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:text="امتیاز نهایی: "
+            android:textColor="#ffffff"
+            app:layout_constraintEnd_toStartOf="@+id/editablepointezafi"
+            app:layout_constraintTop_toBottomOf="@+id/time"
+            android:layout_marginRight="16dp" />
+
+        <TextView
+            android:id="@+id/editabletotalpoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:text="80"
+            android:textColor="#ffffff"
+            app:layout_constraintBottom_toBottomOf="@+id/totalpoint"
+            app:layout_constraintEnd_toStartOf="@+id/totalpoint"
+            app:layout_constraintTop_toTopOf="@+id/totalpoint" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

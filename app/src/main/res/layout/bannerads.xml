@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="310dp"
+    android:layout_height="450dp"
+    android:layout_marginBottom="100dp"
+    android:orientation="vertical" >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="310dp"
+        android:layout_height="450dp"
+        android:background="@drawable/shapeblack"
+        >
+
+        <ImageView
+            android:id="@+id/khoroj"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/error_center_x"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ssss"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/invitetextt" />
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constone"
+            android:layout_width="match_parent"
+            android:layout_height="364dp"
+            android:layout_marginTop="4dp"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/invitetextt">
+
+            <ImageView
+                android:id="@+id/imageads"
+                android:layout_width="230dp"
+                android:layout_height="330dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</LinearLayout>

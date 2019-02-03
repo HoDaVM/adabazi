@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="ir.hiup.hadskalme.HomeActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="170dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/logo"
+        android:id="@+id/applogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="8dp" />
+
+    <ImageView
+        android:layout_width="162dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/support"
+        android:src="@drawable/support"
+        app:layout_constraintEnd_toStartOf="@+id/offlinemode"
+        app:layout_constraintTop_toTopOf="@+id/offlinemode"
+        />
+
+    <ImageView
+        android:layout_width="168dp"
+        android:layout_height="47dp"
+        android:src="@drawable/myvideos"
+        android:id="@+id/myvideos"
+        app:layout_constraintTop_toBottomOf="@+id/support"
+        app:layout_constraintStart_toStartOf="@+id/support"
+        app:layout_constraintEnd_toEndOf="@+id/support"
+        />
+
+    <ImageView
+        android:id="@+id/goftogo"
+        android:layout_width="168dp"
+        android:layout_height="47dp"
+        android:src="@drawable/exitfromgame"
+        app:layout_constraintTop_toBottomOf="@+id/myvideos"
+        app:layout_constraintStart_toStartOf="@+id/myvideos"
+        app:layout_constraintEnd_toEndOf="@+id/myvideos"
+       />
+
+    <ImageView
+        android:layout_width="152dp"
+        android:layout_height="49dp"
+        android:id="@+id/offlinemode"
+        android:src="@drawable/ofllinemode"
+        tools:layout_editor_absoluteX="178dp"
+        app:layout_constraintTop_toBottomOf="@+id/startgame"
+        app:layout_constraintStart_toStartOf="@id/startgame"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="45dp"
+        tools:layout_editor_absoluteY="427dp"
+        android:layout_marginLeft="45dp" />
+
+    <ImageView
+        android:id="@+id/music"
+        android:layout_width="157dp"
+        android:layout_height="44dp"
+        android:src="@drawable/music"
+        app:layout_constraintStart_toStartOf="@+id/offlinemode"
+        app:layout_constraintTop_toBottomOf="@+id/offlinemode"
+        app:layout_constraintEnd_toEndOf="@+id/offlinemode"
+        />
+
+    <ImageView
+        android:id="@+id/sendword"
+        android:layout_width="168dp"
+        android:layout_height="47dp"
+        android:src="@drawable/sendword"
+        app:layout_constraintStart_toStartOf="@+id/offlinemode"
+        app:layout_constraintTop_toBottomOf="@+id/music"
+        app:layout_constraintEnd_toEndOf="@+id/offlinemode" />
+
+    <ImageView
+        android:id="@+id/charachter"
+        android:layout_width="277dp"
+        android:layout_height="300dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/charachter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/startgame"
+        android:layout_width="79dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/startbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/charachter" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="ir.hiup.hadskalme.GameSetting">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/backtoback"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+        android:id="@+id/TimeGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="زمان بازی برای هر نفر:"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back"
+        android:layout_marginRight="8dp" />
+
+    <TextView
+        android:id="@+id/EditableTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="45 ثانیه"
+        android:textSize="17sp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/TimeGame"
+        app:layout_constraintEnd_toStartOf="@+id/TimeGame"
+        app:layout_constraintTop_toTopOf="@+id/TimeGame"
+        android:layout_marginRight="8dp" />
+
+
+
+    <app.minimize.com.seek_bar_compat.SeekBarCompat
+        android:id="@+id/seekBar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:maxHeight="300sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditableTime"
+        app:progressBackgroundColor="#ececec"
+        app:progressColor="#FFFFFF"
+        app:thumbAlpha="1.0"
+        app:thumbColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/typetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="10dp"
+        android:text="حالت بازی : "
+        android:textColor="#ffffff"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekBar2"
+        android:layout_marginRight="8dp" />
+
+    <info.hoang8f.android.segmented.SegmentedGroup xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/gamemode"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_margin="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        segmentedgroup:layout_constraintEnd_toEndOf="parent"
+        segmentedgroup:layout_constraintStart_toStartOf="parent"
+        segmentedgroup:layout_constraintTop_toBottomOf="@+id/typetext"
+        segmentedgroup:sc_border_width="2dp"
+        segmentedgroup:sc_corner_radius="10dp">
+
+        <RadioButton
+            android:id="@+id/imagemode"
+            style="@style/RadioButton"
+            android:layout_width="149dp"
+            android:layout_height="wrap_content"
+            android:text="تصویری" />
+
+        <RadioButton
+            android:id="@+id/wordmode"
+            style="@style/RadioButton"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:text="کلمه ای" />
+
+    </info.hoang8f.android.segmented.SegmentedGroup>
+
+    <TextView
+        android:id="@+id/counttext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="10dp"
+        android:text="چند نفر هستین‌؟ "
+        android:textColor="#ffffff"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gamemode"
+        android:layout_marginRight="8dp" />
+
+    <info.hoang8f.android.segmented.SegmentedGroup xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/countselect"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_margin="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        segmentedgroup:layout_constraintEnd_toEndOf="parent"
+        segmentedgroup:layout_constraintStart_toStartOf="parent"
+        segmentedgroup:layout_constraintTop_toBottomOf="@+id/counttext"
+        segmentedgroup:sc_border_width="2dp"
+        segmentedgroup:sc_corner_radius="10dp">
+
+        <RadioButton
+            android:id="@+id/wearemore"
+            style="@style/RadioButton"
+            android:layout_width="149dp"
+            android:layout_height="wrap_content"
+            android:text="بیشتر از دو نفریم" />
+
+        <RadioButton
+            android:id="@+id/wearetwo"
+            style="@style/RadioButton"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:text="دو نفریم" />
+
+    </info.hoang8f.android.segmented.SegmentedGroup>
+
+            <TextView
+                android:id="@+id/doorbazitext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:text="تعداد دور بازی : "
+                android:textColor="#ffffff"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/countselect"
+                android:layout_marginRight="8dp" />
+
+    <TextView
+        android:id="@+id/EditableDoor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="1 دور"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/doorbazitext"
+        app:layout_constraintEnd_toStartOf="@+id/doorbazitext"
+        app:layout_constraintTop_toTopOf="@+id/doorbazitext"
+        android:layout_marginRight="8dp" />
+
+    <app.minimize.com.seek_bar_compat.SeekBarCompat
+        android:id="@+id/door"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:maxHeight="300sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditableDoor"
+        app:progressBackgroundColor="#ececec"
+        app:progressColor="#FFFFFF"
+        app:thumbAlpha="1.0"
+        app:thumbColor="#FFFFFF" />
+
+
+    <ImageView
+        android:id="@+id/letsgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/letsgo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/door" />
+
+
+</android.support.constraint.ConstraintLayout>

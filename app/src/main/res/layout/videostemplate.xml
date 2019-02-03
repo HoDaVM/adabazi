@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/lnrelan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shapeblack"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_marginLeft="0dp"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/deletevideo"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="left"
+                android:src="@drawable/deletebutton" />
+
+            <ImageView
+                android:id="@+id/sharevideo"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="left"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="-3dp"
+                android:src="@drawable/sharebutton" />
+
+            <ImageView
+                android:id="@+id/playvideo"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="left"
+                android:src="@drawable/playbutton" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="right"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:gravity="right"
+                android:textAlignment="gravity"
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:text="sssse"
+                android:textSize="10sp"
+                android:layout_marginTop="5dp"
+                android:textColor="#ffffff"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:text="Titlssss"
+                android:layout_marginTop="2dp"
+                android:textSize="10sp"
+                android:textColor="#ffffff"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/logo" />
+
+    </LinearLayout>
+
+</LinearLayout>

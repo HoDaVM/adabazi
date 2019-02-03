@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.sunsct.adabazi"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 13
+        versionName "2.2.2"
+        manifestPlaceholders = [
+                appnex_channel_id           : 'A-AdaBazi',
+                appnex_app_id               : '17fa01c7-d926-e911-a94f-0050568c8c46',
+                // Project number pulled from dashboard, local value is ignored.
+                appnex_google_project_number: '1069701268242'
+        ]
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    //implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'info.hoang8f:android-segmented:1.0.6'
+    implementation 'com.minimize.library:seekbar-compat:0.2.5'
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+    implementation 'com.flurry.android:analytics:11.2.0'
+    implementation 'com.github.f0ris.sweetalert:library:1.5.1'
+    implementation 'com.pegah.backtory:backtory-android-sdk:0.5.3'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    //implementation 'com.google.ads.interactivemedia.v3:interactivemedia:3.6.0'
+    //implementation 'co.ronash.android:pushe-base:1.3.4'
+    //implementation 'com.google.android.gms:play-services-gcm:10.2.1'
+    //implementation 'com.google.android.gms:play-services-ads:10.2.1'
+    implementation 'com.google.android.libraries.mediaframework:mediaframework:0.2.1'
+//    implementation(name: 'Tapligh-library-V218')
+    implementation project(':appnex-v2.0.4')
+
+    implementation 'com.loopj.android:android-async-http:1.4.9'
+    implementation 'com.google.firebase:firebase-core:16.0.6'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation 'pub.devrel:easypermissions:2.0.1'
+
+}
+apply plugin: 'com.google.gms.google-services'
