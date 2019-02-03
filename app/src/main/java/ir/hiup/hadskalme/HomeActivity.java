@@ -28,7 +28,7 @@ import ir.hiup.hadskalme.UIinit.Animations.Animations;
 import ir.hiup.hadskalme.UIinit.Auth;
 import ir.hiup.hadskalme.UIinit.Dialogs.CommonDialoge;
 import ir.hiup.hadskalme.UIinit.Dialogs.InternetDialoge;
-import ir.hiup.hadskalme.UIinit.Dialogs.InviteCodeDialoge;
+//import ir.hiup.hadskalme.UIinit.Dialogs.InviteCodeDialoge;
 import ir.hiup.hadskalme.UIinit.Dialogs.OfflineDialoge;
 import ir.hiup.hadskalme.UIinit.Dialogs.SendWordDialoge;
 import ir.hiup.hadskalme.UIinit.Dialogs.SupportDialoge;
@@ -47,13 +47,13 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class HomeActivity extends AppCompatActivity {
 
 
-    static final String SKU_PREMIUM = ir.hiup.hadskalme.Shared.read("PACKAGE","FIRSTPACK");
+    static final String SKU_PREMIUM = ir.hiup.hadskalme.Shared.read("PACKAGE", "FIRSTPACK");
     static final int RC_REQUEST = 1372;
     private static final String TAG = "FORPs";
     // The helper object
-    IabHelper mHelper;
-    IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener;
-    IabHelper.QueryInventoryFinishedListener mGotInventoryListener;
+//    IabHelper mHelper;
+//    IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener;
+//    IabHelper.QueryInventoryFinishedListener mGotInventoryListener;
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -69,7 +69,7 @@ public class HomeActivity extends AppCompatActivity {
                             Intent intent = new Intent(Intent.ACTION_MAIN);
                             intent.addCategory(Intent.CATEGORY_HOME);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            GlobalVariables.flaginapp=false;
+                            GlobalVariables.flaginapp = false;
                             startActivity(intent);
                             finish();
                         }
@@ -91,102 +91,30 @@ public class HomeActivity extends AppCompatActivity {
         UiInit.Home(HomeActivity.this);
         Auth.update(HomeActivity.this);
         Animations.playbutton(findViewById(R.id.startgame));
+        ImageView offlinemode = findViewById(R.id.offlinemode);
+        offlinemode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Auth.MasrafTicket(HomeActivity.this);
+            }
+        });
 
-        if(Shared.read("InsertDavat","null").equals("1"))
-        {
-            InviteCodeDialoge inviteCodeDialoge = new InviteCodeDialoge(HomeActivity.this);
-            inviteCodeDialoge.show();
-            Auth.CopyDatabase(HomeActivity.this);
-            Shared.write("InsertDavat","2");
-
-        }
-        else if(ir.hiup.hadskalme.Shared.read("FirstAds","0").equals("0"))
-        {
-            if(validation.isOnline(HomeActivity.this) && !Shared.read("OfflineMode","null").equals("1"))
+            if (ir.hiup.hadskalme.Shared.read("FirstAds", "0").equals("0")) {
+            if (validation.isOnline(HomeActivity.this) && !Shared.read("OfflineMode", "null").equals("1"))
                 GetUserWaitingInvites(BacktoryUser.getCurrentUser().getUsername());
-            Auth.ourAdsinit(HomeActivity.this,1);
-            ir.hiup.hadskalme.Shared.write("FirstAds","1");
+            Auth.ourAdsinit(HomeActivity.this, 1);
+            ir.hiup.hadskalme.Shared.write("FirstAds", "1");
         }
 
-        if(Shared.read("backgroundmusic","null").equals("okay"))
-        {
+        if (Shared.read("backgroundmusic", "null").equals("okay")) {
             ImageView userpic = (ImageView) findViewById(R.id.music);
             userpic.setImageResource(R.drawable.music);
-        }
-        else
-        {
+        } else {
             ImageView userpic = (ImageView) findViewById(R.id.music);
             userpic.setImageResource(R.drawable.activemusic);
         }
 
 
-        Auth.CheckForUpdateGift(HomeActivity.this);
-        String base64EncodedPublicKey = "MIHNMA0GCSqGSIb3DQEBAQUAA4G7ADCBtwKBrwDevul45fN6JxESB4P74/BGLDpvWmmcGSnAufrC8bbuI1tL3pCe2jW4+1xoEsNvGqF/rHrBghVRZDEZaI+XFBU6POsUTGKJP+V5P5zD5ncLMSwxMTGodEBvp7ZRBBAGRt7ILLo6gh4bojNYjiLinTHu2ea59qPzETRDPj36P6CZ2Poqu6F0EA1zm6WEIsNv+HXW3QbGqsHPvuMWZFsO0DtWHxxJtll+vXu2hNDSUjMCAwEAAQ==";
-
-        mHelper = new IabHelper(this, base64EncodedPublicKey);
-
-
-        mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
-            public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
-                Log.d(TAG, "Query inventory finished.");
-                if (result.isFailure()) {
-                    Log.d(TAG, "Failed to query inventory: " + result);
-                    return;
-                } else {
-                    Log.d(TAG, "Query inventory was successful.");
-                    // does the user have the premium upgrade?
-
-                    boolean PACK1 = false;
-                    boolean PACK2 = false;
-                    boolean PACK3 = false;
-                    boolean PACK4 = false;
-                    PACK1 = inventory.hasPurchase("SPECIALPACKAGE");
-                    PACK2 = inventory.hasPurchase("PACKTWO");
-                    PACK3 = inventory.hasPurchase("PACKTHREE");
-                    PACK4 = inventory.hasPurchase("FIRSTPACK");
-                    if (PACK1 || PACK2 || PACK3 || PACK4) {
-                        Auth.MasrafTicket(HomeActivity.this);
-                        UiInit.gotopage(HomeActivity.this, HomeActivity.class);
-                    }
-                }
-            }
-        };
-
-
-        mPurchaseFinishedListener = new IabHelper.OnIabPurchaseFinishedListener() {
-            public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
-                if (result.isFailure()) {
-                    Log.d(TAG, "Error purchasing: " + result);
-                    return;
-                }  else if (purchase.getSku().equals(SKU_PREMIUM)) {
-                    Auth.MasrafTicket(HomeActivity.this);
-                }
-            }
-        };
-
-
-        mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
-            @Override
-            public void onIabSetupFinished(IabResult result) {
-                if (!result.isSuccess()) {
-                    Log.d(TAG, "Problem setting up In-app Billing: " + result);
-                } else {
-                    if(!validation.BuyedUser())
-                        mHelper.queryInventoryAsync(mGotInventoryListener);
-                    findViewById(R.id.offlinemode).setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Animations.clickeffect(view);
-                            GlobalVariables.flaginapp = true;
-                            Sounds.simplebuttons(getBaseContext());
-                            OfflineDialoge offlineDialoge = new OfflineDialoge(HomeActivity.this,mHelper,mPurchaseFinishedListener);
-                            offlineDialoge.show();
-                        }
-                    });
-
-                }
-            }
-        });
 
         findViewById(R.id.music).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -216,17 +144,16 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-
-        findViewById(R.id.support).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Animations.clickeffect(view);
-                GlobalVariables.flaginapp = true;
-                Sounds.simplebuttons(getBaseContext());
-                SupportDialoge supportDialoge = new SupportDialoge(HomeActivity.this);
-                supportDialoge.show();
-            }
-        });
+//        findViewById(R.id.support).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Animations.clickeffect(view);
+//                GlobalVariables.flaginapp = true;
+//                Sounds.simplebuttons(getBaseContext());
+//                SupportDialoge supportDialoge = new SupportDialoge(HomeActivity.this);
+//                supportDialoge.show();
+//            }
+//        });
 
         findViewById(R.id.sendword).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -234,14 +161,11 @@ public class HomeActivity extends AppCompatActivity {
                 Animations.clickeffect(view);
                 GlobalVariables.flaginapp = true;
                 Sounds.simplebuttons(getBaseContext());
-                if(validation.isOnline(HomeActivity.this))
-                {
+                if (validation.isOnline(HomeActivity.this)) {
                     SendWordDialoge sendWordDialoge = new SendWordDialoge(HomeActivity.this);
                     sendWordDialoge.show();
-                }
-                else
-                {
-                    CommonDialoge commonDialoge = new CommonDialoge(HomeActivity.this,"برای استفاده از این امکان باید آنلاین باشید","اینترنت");
+                } else {
+                    CommonDialoge commonDialoge = new CommonDialoge(HomeActivity.this, "برای استفاده از این امکان باید آنلاین باشید", "اینترنت");
                     commonDialoge.show();
                 }
 
@@ -252,10 +176,9 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 GlobalVariables.flaginapp = true;
                 Sounds.playbuttons(getBaseContext());
-                if(validation.isOnline(HomeActivity.this) || validation.userCanOffline())
-                    UiInit.gotopage(HomeActivity.this,GameSetting.class);
-                else
-                {
+                if (validation.isOnline(HomeActivity.this) || validation.userCanOffline())
+                    UiInit.gotopage(HomeActivity.this, GameSetting.class);
+                else {
                     InternetDialoge internetDialoge = new InternetDialoge(HomeActivity.this);
                     internetDialoge.show();
                 }
@@ -276,9 +199,10 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        UiInit.clickfunc(HomeActivity.this,VideosActivity.class,R.id.myvideos);
+        UiInit.clickfunc(HomeActivity.this, VideosActivity.class, R.id.myvideos);
 
     }
+
     public void GetUserWaitingInvites(String username) {
 
         BacktoryQuery getCoinsAndDouble = new BacktoryQuery("players");
@@ -289,19 +213,15 @@ public class HomeActivity extends AppCompatActivity {
                 if (backtoryResponse.isSuccessful()) {
                     List<BacktoryObject> objectThings = backtoryResponse.body();
                     for (BacktoryObject things : objectThings) {
-                        int number=0;
-                        try
-                        {
+                        int number = 0;
+                        try {
                             number = things.getInt("invitesWaiting");
+                        } catch (Exception exp) {
+                            number = 0;
                         }
-                        catch (Exception exp)
-                        {
-                            number=0;
-                        }
-                        if(number>0)
-                        {
-                            Auth.usercanofflineTime(3,number,HomeActivity.this,1);
-                            Auth.SetnewInvites(BacktoryUser.getCurrentUser().getUsername(),0);
+                        if (number > 0) {
+                            Auth.usercanofflineTime(3, number, HomeActivity.this, 1);
+                            Auth.SetnewInvites(BacktoryUser.getCurrentUser().getUsername(), 0);
                         }
                     }
                 }
@@ -315,12 +235,12 @@ public class HomeActivity extends AppCompatActivity {
 
         Log.d(TAG, "onActivityResult(" + requestCode + "," + resultCode + "," + data);
 
-        // Pass on the activity result to the helper for handling
-        if (!mHelper.handleActivityResult(requestCode, resultCode, data)) {
-            super.onActivityResult(requestCode, resultCode, data);
-        } else {
-            Log.d(TAG, "onActivityResult handled by IABUtil.");
-        }
+//        // Pass on the activity result to the helper for handling
+//        if (!mHelper.handleActivityResult(requestCode, resultCode, data)) {
+//            super.onActivityResult(requestCode, resultCode, data);
+//        } else {
+//            Log.d(TAG, "onActivityResult handled by IABUtil.");
+//        }
     }
 
     @Override

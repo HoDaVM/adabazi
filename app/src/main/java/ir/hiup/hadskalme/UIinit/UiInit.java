@@ -160,12 +160,9 @@ public class UiInit {
         activity.findViewById(R.id.myvideos).getLayoutParams().width=width/3+10;
         activity.findViewById(R.id.myvideos).getLayoutParams().height=width/9;
 
-        activity.findViewById(R.id.support).getLayoutParams().width=width/3+10;
-        activity.findViewById(R.id.support).getLayoutParams().height=width/9;
-
-        ConstraintLayout.LayoutParams paramsThree = (ConstraintLayout.LayoutParams) activity.findViewById(R.id.support).getLayoutParams();
+        ConstraintLayout.LayoutParams paramsThree = (ConstraintLayout.LayoutParams) activity.findViewById(R.id.myvideos).getLayoutParams();
         paramsThree.setMargins(0,height/30,width/16,0);
-        activity.findViewById(R.id.support).setLayoutParams(paramsThree);
+        activity.findViewById(R.id.myvideos).setLayoutParams(paramsThree);
 
     }
 

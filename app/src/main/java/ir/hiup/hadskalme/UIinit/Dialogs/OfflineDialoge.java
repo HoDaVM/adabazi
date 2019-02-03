@@ -47,15 +47,15 @@ public class OfflineDialoge extends Dialog implements View.OnClickListener {
         public Dialog d;
         static final String SKU_PREMIUM = ir.hiup.hadskalme.Shared.read("PACKAGE","FIRSTPACK");
         static final int RC_REQUEST = 1372;
-        private IabHelper iabHelper;
-        private IabHelper.OnIabPurchaseFinishedListener onIabPurchaseFinishedListener;
+//        private IabHelper iabHelper;
+//        private IabHelper.OnIabPurchaseFinishedListener onIabPurchaseFinishedListener;
 
-    public OfflineDialoge(Activity a, IabHelper iabHelper, IabHelper.OnIabPurchaseFinishedListener onIabPurchaseFinishedListener) {
+    public OfflineDialoge(Activity a, IabHelper iabHelper/*, IabHelper.OnIabPurchaseFinishedListener onIabPurchaseFinishedListener*/) {
             super(a);
             // TODO Auto-generated constructor stub
             this.c = a;
-            this.iabHelper=iabHelper;
-            this.onIabPurchaseFinishedListener = onIabPurchaseFinishedListener;
+//            this.iabHelper=iabHelper;
+//            this.onIabPurchaseFinishedListener = onIabPurchaseFinishedListener;
             getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
         }
@@ -179,11 +179,11 @@ public class OfflineDialoge extends Dialog implements View.OnClickListener {
             Animations.clickeffect(v);
             switch (v.getId()) {
                 case R.id.buybutton:
-                    if (iabHelper != null) iabHelper.flagEndAsync();
-                    if (iabHelper != null) {
-                        iabHelper.launchPurchaseFlow(c, SKU_PREMIUM, RC_REQUEST,
-                                onIabPurchaseFinishedListener);
-                    }
+//                    if (iabHelper != null) iabHelper.flagEndAsync();
+//                    if (iabHelper != null) {
+//                        iabHelper.launchPurchaseFlow(c, SKU_PREMIUM, RC_REQUEST,
+//                                onIabPurchaseFinishedListener);
+//                    }
                     break;
                 case R.id.ourtelegram:
                     Animations.clickeffect(findViewById(R.id.buybutton));

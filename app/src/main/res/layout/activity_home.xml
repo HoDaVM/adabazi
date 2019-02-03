@@ -22,21 +22,21 @@
         android:layout_width="162dp"
         android:layout_height="44dp"
         android:layout_marginTop="20dp"
-        android:id="@+id/support"
-        android:src="@drawable/support"
+        android:id="@+id/myvideos"
+        android:src="@drawable/myvideos"
         app:layout_constraintEnd_toStartOf="@+id/offlinemode"
         app:layout_constraintTop_toTopOf="@+id/offlinemode"
         />
 
-    <ImageView
-        android:layout_width="168dp"
-        android:layout_height="47dp"
-        android:src="@drawable/myvideos"
-        android:id="@+id/myvideos"
-        app:layout_constraintTop_toBottomOf="@+id/support"
-        app:layout_constraintStart_toStartOf="@+id/support"
-        app:layout_constraintEnd_toEndOf="@+id/support"
-        />
+    <!--<ImageView-->
+        <!--android:layout_width="175dp"-->
+        <!--android:layout_height="47dp"-->
+        <!--android:src="@drawable/myvideos"-->
+        <!--android:id="@+id/myvideos1"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/support"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/support"-->
+        <!--app:layout_constraintEnd_toEndOf="@+id/support"-->
+        <!--/>-->
 
     <ImageView
         android:id="@+id/goftogo"
@@ -78,13 +78,13 @@
         android:src="@drawable/sendword"
         app:layout_constraintStart_toStartOf="@+id/offlinemode"
         app:layout_constraintTop_toBottomOf="@+id/music"
-        app:layout_constraintEnd_toEndOf="@+id/offlinemode" />
+        app:layout_constraintEnd_toEndOf="@+id/offlinemode"
+        android:visibility="gone"/>
 
     <ImageView
         android:id="@+id/charachter"
-        android:layout_width="277dp"
+        android:layout_width="286dp"
         android:layout_height="300dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:src="@drawable/charachter"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -97,7 +97,6 @@
         android:layout_width="79dp"
         android:layout_height="70dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:src="@drawable/startbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

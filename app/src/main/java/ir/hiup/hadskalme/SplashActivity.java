@@ -38,19 +38,18 @@ public class SplashActivity extends AppCompatActivity {
         UiInit.Splash(SplashActivity.this);
         recordRunTime();
 
-        if(validation.isOnline(SplashActivity.this))
+        if (validation.isOnline(SplashActivity.this))
             Auth.getAppVersion();
 
 //        final Tapligh tapligh = Tapligh.newInstance(SplashActivity.this);
 //        tapligh.setToken("XANPN2QFAO2RHSXFMSGHKVNBHGAYOH");
 
-        if (validation.isOnline(SplashActivity.this) || (validation.userCanOffline()))
-        {
-            ir.hiup.hadskalme.Shared.write("FirstAds","0");
-            ir.hiup.hadskalme.Shared.write("SecondAds","0");
-            ir.hiup.hadskalme.Shared.write("ThirdAds","0");
-            ir.hiup.hadskalme.Shared.write("FourthAds","0");
-            ir.hiup.hadskalme.Shared.write("FifthAds","0");
+        if (validation.isOnline(SplashActivity.this) || (validation.userCanOffline())) {
+            ir.hiup.hadskalme.Shared.write("FirstAds", "0");
+            ir.hiup.hadskalme.Shared.write("SecondAds", "0");
+            ir.hiup.hadskalme.Shared.write("ThirdAds", "0");
+            ir.hiup.hadskalme.Shared.write("FourthAds", "0");
+            ir.hiup.hadskalme.Shared.write("FifthAds", "0");
             startService(new Intent(this, CheckRecentRun.class));
             final int[] i = {0, 0};
             countDownTimer = new CountDownTimer(3 * 1000, 1000) {
@@ -70,7 +69,7 @@ public class SplashActivity extends AppCompatActivity {
                 @Override
                 public void onFinish() {
                     final BacktoryUser currentU = BacktoryUser.getCurrentUser();
-                    if(currentU==null)
+                    if (currentU == null)
                         UiInit.gotopage(SplashActivity.this, RegisterActivity.class);
                     else
                         UiInit.gotopage(SplashActivity.this, HomeActivity.class);
@@ -78,13 +77,12 @@ public class SplashActivity extends AppCompatActivity {
                 }
             };
             countDownTimer.start();
-        }
-        else
-        {
+        } else {
             InternetDialoge internetDialoge = new InternetDialoge(SplashActivity.this);
             internetDialoge.show();
         }
     }
+
     public static void setAlphaAnimation(View v) {
         ObjectAnimator fadeOut = ObjectAnimator.ofFloat(v, "alpha", 1f, .4f);
         fadeOut.setDuration(1500);

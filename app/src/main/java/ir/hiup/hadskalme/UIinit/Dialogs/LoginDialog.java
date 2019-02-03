@@ -53,7 +53,7 @@ public class LoginDialog extends Dialog implements View.OnClickListener {
                 case R.id.registerbutton:
                     EditText username = (EditText) findViewById(R.id.username);
                     EditText password = (EditText) findViewById(R.id.password);
-                    Auth.Login(c,this,username.getText().toString().trim(),password.getText().toString().trim());
+                    Auth.Login(c,username.getText().toString().trim(),password.getText().toString().trim());
                     break;
                 case R.id.khoroj:
                     dismiss();

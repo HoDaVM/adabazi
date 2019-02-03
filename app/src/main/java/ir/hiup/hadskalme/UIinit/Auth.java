@@ -41,7 +41,7 @@ import ir.hiup.hadskalme.SplashActivity;
 import ir.hiup.hadskalme.UIinit.Dialogs.BannerAdsDialoge;
 import ir.hiup.hadskalme.UIinit.Dialogs.FreeSubscription;
 import ir.hiup.hadskalme.UIinit.Dialogs.InviteCodeDialoge;
-import ir.hiup.hadskalme.UIinit.Dialogs.LoginDialog;
+//import ir.hiup.hadskalme.UIinit.Dialogs.LoginDialog;
 import ir.hiup.hadskalme.UIinit.Dialogs.OfflineDialoge;
 import ir.hiup.hadskalme.UIinit.Dialogs.RegisterDialog;
 import ir.hiup.hadskalme.UIinit.Dialogs.SendWordDialoge;
@@ -138,7 +138,7 @@ public class Auth {
     }
 
 
-    public static void Login(final Activity act, final LoginDialog log, final String username, String password)
+    public static void Login(final Activity act,/* final LoginDialog log,*/ final String username, String password)
     {
 
         final ProgressDialog progressDoalog;
@@ -160,7 +160,9 @@ public class Auth {
                             Shared.write("USERNAME",username);
                             Shared.write("GUEST","0");
                             Shared.write("InsertDavat","2");
+/*
                             log.dismiss();
+*/
                             progressDoalog.dismiss();
                             UiInit.gotopage(act,HomeActivity.class);
                             act.finish();

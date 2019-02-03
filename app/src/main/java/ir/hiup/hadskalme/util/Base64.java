@@ -31,13 +31,13 @@ package ir.hiup.hadskalme.util;
  * @version 1.3
  */
 
-/**
- * Base64 converter class. This code is not a complete MIME encoder;
- * it simply converts binary data to base64 data and back.
- *
- * <p>Note {@link CharBase64} is a GWT-compatible implementation of this
- * class.
- */
+///**
+// * Base64 converter class. This code is not a complete MIME encoder;
+// * it simply converts binary data to base64 data and back.
+// *
+// * <p>Note {@link CharBase64} is a GWT-compatible implementation of this
+// * class.
+// */
 public class Base64 {
     /** Specify encoding (value is {@code true}). */
     public final static boolean ENCODE = true;
